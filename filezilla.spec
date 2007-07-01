@@ -1,12 +1,12 @@
 Name:           filezilla
 Version:        3.0.0
-Release:        %mkrel 0.beta8.1
+Release:        %mkrel -c beta10 1
 Summary:        FileZilla is a fast and reliable FTP client
 
 Group:          Networking/File transfer
 License:        GPL 
 URL:            http://filezilla.sourceforge.net/
-Source0:        FileZilla_3.0.0-beta8_src.tar.bz2
+Source0:        FileZilla_3.0.0-beta10_src.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  libwxgtk2.8-devel
