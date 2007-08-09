@@ -1,4 +1,4 @@
-%define betaver beta10
+%define betaver beta11
 
 Name:           filezilla
 Version:        3.0.0
@@ -26,6 +26,7 @@ of useful features and an intuitive interface
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
 %{_datadir}/%{name}/locales
+%{_datadir}/%{name}/docs/fzdefaults.xml.example
 %{_datadir}/applications/*-%{name}.desktop
 %{_iconsdir}/filezilla.png
 
