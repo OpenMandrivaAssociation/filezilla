@@ -1,4 +1,4 @@
-%define betaver beta11
+%define betaver rc1
 
 Name:           filezilla
 Version:        3.0.0
@@ -37,13 +37,13 @@ of useful features and an intuitive interface
 
 
 %build
-%configure 
+%configure2_5x 
 %make 
 
 
 %install
 rm -rf %buildroot
-make install DESTDIR=%buildroot
+%makeinstall_std
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -54,7 +54,7 @@ Exec=%{_bindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-Internet-FileTransfer;Network;FileTransfer;
+Categories=Network;FileTransfer;
 Encoding=UTF-8
 EOF
 
