@@ -29,7 +29,7 @@ of useful features and an intuitive interface
 %{_datadir}/%{name}/locales
 %{_datadir}/%{name}/docs/fzdefaults.xml.example
 %{_datadir}/applications/*-%{name}.desktop
-%{_iconsdir}/filezilla.png
+%{_iconsdir}/hicolor/*/apps/filezilla.png
 
 #--------------------------------------------------------------------
 
@@ -59,9 +59,11 @@ Categories=Network;FileTransfer;
 Encoding=UTF-8
 EOF
 
-mkdir -p %{buildroot}/%{_iconsdir}
+mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
 
-cp src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/filezilla.png
+cp src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/filezilla.png
+convert -resize 16x16 src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/filezilla.png
+convert -resize 48x48 src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/filezilla.png
 
 %find_lang %name
 
