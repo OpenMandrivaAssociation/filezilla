@@ -2,7 +2,7 @@
 
 Name:           filezilla
 Version:        3.0.0
-Release:        %mkrel -c %{betaver} 1
+Release:        %mkrel -c %{betaver} 2
 Summary:        FileZilla is a fast and reliable FTP client
 
 Group:          Networking/File transfer
@@ -14,6 +14,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:  libwxgtk2.8-devel
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
+BuildRequires:	ImageMagick
 
 %description
 FileZilla is a fast and reliable FTP client and server with lots 
@@ -58,13 +59,11 @@ Categories=Network;FileTransfer;
 Encoding=UTF-8
 EOF
 
-%__mkdir -p %{buildroot}/%{_iconsdir}
+mkdir -p %{buildroot}/%{_iconsdir}
 
-ln -s %{buildroot}%{_datadir}/filezilla/resources/filezilla.png %{buildroot}/%{_iconsdir}/filezilla.png
+cp src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/filezilla.png
 
 %find_lang %name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-
