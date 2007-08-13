@@ -2,7 +2,7 @@
 
 Name:           filezilla
 Version:        3.0.0
-Release:        %mkrel -c %{betaver} 2
+Release:        %mkrel -c %{betaver} 3
 Summary:        FileZilla is a fast and reliable FTP client
 
 Group:          Networking/File transfer
@@ -19,6 +19,14 @@ BuildRequires:	ImageMagick
 %description
 FileZilla is a fast and reliable FTP client and server with lots 
 of useful features and an intuitive interface
+
+%post
+%update_menus
+%update_icon_cache hicolor
+
+%postun
+%clean_menus
+%clean_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
