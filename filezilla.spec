@@ -64,7 +64,6 @@ Icon=%{name}
 Terminal=false
 Type=Application
 Categories=Network;FileTransfer;
-Encoding=UTF-8
 EOF
 
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
