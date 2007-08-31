@@ -1,4 +1,4 @@
-i%define betaver rc2
+%define betaver rc2
 
 Name:           filezilla
 Version:        3.0.0
