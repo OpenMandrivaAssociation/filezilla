@@ -1,4 +1,4 @@
-%define betaver rc1
+i%define betaver rc2
 
 Name:           filezilla
 Version:        3.0.0
@@ -34,10 +34,10 @@ of useful features and an intuitive interface
 %{_bindir}/fzsftp
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
-%{_datadir}/%{name}/locales
 %{_datadir}/%{name}/docs/fzdefaults.xml.example
-%{_datadir}/applications/*-%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/filezilla.png
+%{_datadir}/applications/filezilla.desktop
+%{_datadir}/pixmaps/filezilla.png
 
 #--------------------------------------------------------------------
 
@@ -53,18 +53,6 @@ of useful features and an intuitive interface
 %install
 rm -rf %buildroot
 %makeinstall_std
-
-mkdir -p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Name=Filezilla
-Comment=FileZilla is a fast and reliable FTP client
-Exec=%{_bindir}/%{name}
-Icon=%{name}
-Terminal=false
-Type=Application
-Categories=Network;FileTransfer;
-EOF
 
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
 
