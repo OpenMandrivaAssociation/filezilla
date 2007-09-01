@@ -1,8 +1,8 @@
-%define betaver rc2
+%define betaver rc3
 
 Name:           filezilla
 Version:        3.0.0
-Release:        %mkrel -c %{betaver} 3
+Release:        %mkrel -c %{betaver} 1
 Summary:        FileZilla is a fast and reliable FTP client
 
 Group:          Networking/File transfer
@@ -15,6 +15,7 @@ BuildRequires:  libwxgtk2.8-devel
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
 BuildRequires:	ImageMagick
+BuildRequires:	desktop-file-utils
 
 %description
 FileZilla is a fast and reliable FTP client and server with lots 
@@ -59,6 +60,11 @@ mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
 cp src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/filezilla.png
 convert -resize 16x16 src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/filezilla.png
 convert -resize 48x48 src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/filezilla.png
+
+desktop-file-install --vendor='' \
+	--dir=%buildroot%_datadir/applications \
+	--add-category='GTK' \
+	%buildroot%_datadir/applications/*.desktop
 
 %find_lang %name
 
