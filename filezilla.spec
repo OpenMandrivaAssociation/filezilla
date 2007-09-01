@@ -11,7 +11,7 @@ URL:            http://filezilla.sourceforge.net/
 Source0:        FileZilla_%{version}-%{betaver}_src.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires:  libwxgtk2.8-devel
+BuildRequires:  wxGTK2.8-devel
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
 BuildRequires:	ImageMagick
