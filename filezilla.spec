@@ -9,6 +9,7 @@ Group:          Networking/File transfer
 License:        GPL 
 URL:            http://filezilla.sourceforge.net/
 Source0:        FileZilla_%{version}-%{betaver}_src.tar.bz2
+Patch1:		FileZilla_3.0.0-rc3-fix-desktopfile.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  wxGTK2.8-devel
@@ -44,7 +45,7 @@ of useful features and an intuitive interface
 
 %prep
 %setup -q -n %name-%version-%betaver
-
+%patch1 -p0
 
 %build
 %configure2_5x 
