@@ -1,5 +1,3 @@
-%define betaver rc3
-
 Name:           filezilla
 Version:        3.0.0
 Release:        %mkrel -c %{betaver} 1
@@ -8,7 +6,7 @@ Summary:        FileZilla is a fast and reliable FTP client
 Group:          Networking/File transfer
 License:        GPL 
 URL:            http://filezilla.sourceforge.net/
-Source0:        FileZilla_%{version}-%{betaver}_src.tar.bz2
+Source0:        FileZilla_%{version}_src.tar.bz2
 Patch1:		FileZilla_3.0.0-rc3-fix-desktopfile.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
