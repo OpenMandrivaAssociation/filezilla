@@ -1,6 +1,6 @@
 Name:           filezilla
 Version:        3.0.0
-Release:        %mkrel -c %{betaver} 1
+Release:        %mkrel 1
 Summary:        FileZilla is a fast and reliable FTP client
 
 Group:          Networking/File transfer
@@ -42,7 +42,7 @@ of useful features and an intuitive interface
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %name-%version-%betaver
+%setup -q -n %name-%version
 %patch1 -p0
 
 %build
@@ -55,10 +55,9 @@ rm -rf %buildroot
 %makeinstall_std
 
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
-
-cp src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/filezilla.png
-convert -resize 16x16 src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/filezilla.png
-convert -resize 48x48 src/interface/resources/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/filezilla.png
+cp src/interface/resources/16x16/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/filezilla.png
+cp src/interface/resources/32x32/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/filezilla.png
+cp src/interface/resources/48x48/filezilla.png %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/filezilla.png
 
 desktop-file-install --vendor='' \
 	--dir=%buildroot%_datadir/applications \
