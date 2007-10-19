@@ -1,5 +1,5 @@
 Name:           filezilla
-Version:        3.0.2
+Version:        3.0.2.1
 Release:        %mkrel 1
 Summary:        FileZilla is a fast and reliable FTP client
 
