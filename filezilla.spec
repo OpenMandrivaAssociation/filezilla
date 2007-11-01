@@ -1,12 +1,22 @@
-Name:           filezilla
-Version:        3.0.2.1
-Release:        %mkrel 1
-Summary:        FileZilla is a fast and reliable FTP client
+%define version 3.0.3
+%define betaver rc1
+%define rel
+%if %betaver
+%define release %mkrel -c %betaver %rel
+%define tarballver %version-%betaver
+%else
+%define release %mkrel %rel
+%define tarballver %version
+%endif
 
+Name:           filezilla
+Version:        %version
+Release:        %release
+Summary:        FileZilla is a fast and reliable FTP client
 Group:          Networking/File transfer
 License:        GPLv2 
 URL:            http://filezilla.sourceforge.net/
-Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{version}_src.tar.bz2
+Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
 Patch1:		FileZilla_3.0.0-rc3-fix-desktopfile.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -42,7 +52,7 @@ of useful features and an intuitive interface
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %name-%version
+%setup -q -n %name-%tarballver
 %patch1 -p0
 
 %build
