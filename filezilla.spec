@@ -1,6 +1,6 @@
 %define version 3.0.3
 %define betaver rc1
-%define rel
+%define rel 1
 %if %betaver
 %define release %mkrel -c %betaver %rel
 %define tarballver %version-%betaver
