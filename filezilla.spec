@@ -18,6 +18,7 @@ License:        GPLv2+
 URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
 Patch1:		FileZilla_3.0.0-rc3-fix-desktopfile.patch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  wxGTK2.8-devel
 BuildRequires:  idn-devel
