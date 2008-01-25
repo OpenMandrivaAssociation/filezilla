@@ -48,6 +48,7 @@ of useful features and an intuitive interface
 %{_iconsdir}/hicolor/*/apps/filezilla.png
 %{_datadir}/applications/filezilla.desktop
 %{_datadir}/pixmaps/filezilla.png
+%{_mandir}/man*/*
 
 #--------------------------------------------------------------------
 
