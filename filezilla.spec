@@ -58,7 +58,7 @@ of useful features and an intuitive interface
 
 %build
 %configure2_5x 
-%make 
+make 
 
 
 %install
