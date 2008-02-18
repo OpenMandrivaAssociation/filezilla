@@ -12,7 +12,7 @@
 Name:           filezilla
 Version:        %version
 Release:        %release
-Summary:        FileZilla is a fast and reliable FTP client
+Summary:        Fast and reliable FTP client
 Group:          Networking/File transfer
 License:        GPLv2+ 
 URL:            http://filezilla.sourceforge.net/
