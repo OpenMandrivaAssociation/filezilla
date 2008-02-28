@@ -1,6 +1,6 @@
 %define version 3.0.7.1
 %define betaver 0
-%define rel 1
+%define rel 2
 %if %betaver
 %define release %mkrel -c %betaver %rel
 %define tarballver %version-%betaver
@@ -71,6 +71,7 @@ cp src/interface/resources/48x48/filezilla.png %{buildroot}/%{_iconsdir}/hicolor
 desktop-file-install --vendor='' \
 	--dir=%buildroot%_datadir/applications \
 	--add-category='GTK' \
+	--add-category='X-MandrivaLinux-CrossDesktop'\
 	%buildroot%_datadir/applications/*.desktop
 
 %find_lang %name
