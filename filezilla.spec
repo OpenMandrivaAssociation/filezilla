@@ -1,4 +1,4 @@
-%define version 3.0.7.1
+%define version 3.0.8
 %define betaver 0
 %define rel 2
 %if %betaver
