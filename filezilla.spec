@@ -17,9 +17,11 @@ Group:          Networking/File transfer
 License:        GPLv2+ 
 URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
+# fwang: patch0 from svn trunk
+Patch0:		filezilla-3.0.8-fix-const-string.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires:  wxGTK2.8-devel
+BuildRequires:  wxgtku2.8-devel
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
 BuildRequires:	ImageMagick
@@ -41,6 +43,7 @@ of useful features and an intuitive interface
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_bindir}/fzsftp
+%{_bindir}/fzputtygen
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
 %{_datadir}/%{name}/docs/fzdefaults.xml.example
@@ -53,10 +56,11 @@ of useful features and an intuitive interface
 
 %prep
 %setup -q -n %name-%tarballver
+%patch0 -p2
 
 %build
-%configure2_5x 
-make 
+%configure2_5x --disable-autoupdatecheck
+%make 
 
 
 %install
