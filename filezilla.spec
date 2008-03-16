@@ -19,6 +19,7 @@ URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
 # fwang: patch0 from svn trunk
 Patch0:		filezilla-3.0.8-fix-const-string.patch
+Patch1:		filezilla-3.0.8-fix-mo-file-location.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  wxgtku2.8-devel
@@ -57,6 +58,7 @@ of useful features and an intuitive interface
 %prep
 %setup -q -n %name-%tarballver
 %patch0 -p2
+%patch1 -p0
 
 %build
 %configure2_5x --disable-autoupdatecheck
