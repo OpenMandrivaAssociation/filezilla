@@ -1,4 +1,4 @@
-%define version 3.0.8.1
+%define version 3.0.9.2
 %define betaver 0
 %define rel 1
 %if %betaver
@@ -17,7 +17,6 @@ Group:          Networking/File transfer
 License:        GPLv2+ 
 URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
-Patch1:		filezilla-3.0.8-fix-mo-file-location.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  wxgtku2.8-devel
@@ -55,7 +54,6 @@ of useful features and an intuitive interface
 
 %prep
 %setup -q -n %name-%tarballver
-%patch1 -p0
 
 %build
 %configure2_5x --disable-autoupdatecheck
