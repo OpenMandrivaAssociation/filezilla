@@ -29,13 +29,17 @@ BuildRequires:	desktop-file-utils
 FileZilla is a fast and reliable FTP client and server with lots 
 of useful features and an intuitive interface
 
+%if %mdkversion < 200900
 %post
 %update_menus
 %update_icon_cache hicolor
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
 %clean_icon_cache hicolor
+%endif
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
