@@ -63,8 +63,7 @@ of useful features and an intuitive interface
 
 %build
 %configure2_5x --disable-autoupdatecheck
-%make 
-
+%make -j1
 
 %install
 rm -rf %buildroot
