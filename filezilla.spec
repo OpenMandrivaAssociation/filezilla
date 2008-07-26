@@ -19,8 +19,11 @@ URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
 Patch0:		filezilla-3.0.11-fix-el-translation.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-
+%if %mdkversion > 200800
 BuildRequires:  wxgtku2.8-devel
+%else
+BuildRequires:  wxgtku-devel >= 2.8
+%endif
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
 BuildRequires:	ImageMagick
