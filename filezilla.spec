@@ -1,5 +1,5 @@
-%define version 3.1.0.1
-%define betaver 0
+%define version 3.1.1
+%define betaver rc1
 %define rel 1
 %if %betaver
 %define release %mkrel -c %betaver %rel
@@ -17,7 +17,6 @@ Group:          Networking/File transfer
 License:        GPLv2+ 
 URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
-Patch0:		filezilla-3.0.11-fix-el-translation.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 %if %mdkversion > 200800
 BuildRequires:  wxgtku2.8-devel
@@ -62,7 +61,6 @@ of useful features and an intuitive interface
 
 %prep
 %setup -q -n %name-%tarballver
-%patch0 -p0
 
 %build
 %configure2_5x --disable-autoupdatecheck
