@@ -19,7 +19,7 @@ URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 %if %mdkversion > 200800
-BuildRequires:  wxgtku2.8-devel
+BuildRequires:  wxgtku2.8-devel >= 2.8.9
 %else
 BuildRequires:  wxgtku-devel >= 2.8
 %endif
