@@ -1,4 +1,4 @@
-%define version 3.1.6
+%define version 3.2.0
 %define betaver 0
 %define rel 1
 %if %betaver
@@ -21,7 +21,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 %if %mdkversion > 200800
 BuildRequires:  wxgtku2.8-devel >= 2.8.9
 %else
-BuildRequires:  wxgtku-devel >= 2.8
+BuildRequires:  wxgtku-devel >= 2.8.9
 %endif
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
