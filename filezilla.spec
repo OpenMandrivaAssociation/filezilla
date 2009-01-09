@@ -25,6 +25,7 @@ BuildRequires:  wxgtku-devel >= 2.8.9
 %endif
 BuildRequires:  idn-devel
 BuildRequires:  gnutls-devel
+BuildRequires:	dbus-devel
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 
