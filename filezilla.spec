@@ -17,7 +17,8 @@ Group:          Networking/File transfer
 License:        GPLv2+ 
 URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-rooti
+Patch0:		filezilla-3.2.0-fix-str-fmt.patch
 %if %mdkversion > 200800
 BuildRequires:  wxgtku2.8-devel >= 2.8.9
 %else
@@ -62,6 +63,7 @@ of useful features and an intuitive interface
 
 %prep
 %setup -q -n %name-%tarballver
+%patch0 -p0
 
 %build
 %configure2_5x --disable-autoupdatecheck
