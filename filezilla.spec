@@ -1,6 +1,6 @@
-%define version 3.2.4.1
+%define version 3.2.5
 %define betaver 0
-%define rel 2
+%define rel 1
 %if %betaver
 %define release %mkrel -c %betaver %rel
 %define tarballver %version-%betaver
@@ -19,7 +19,6 @@ URL:            http://filezilla.sourceforge.net/
 Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-rooti
 Patch0:		filezilla-3.2.0-fix-str-fmt.patch
-Patch1:		filezilla-3.2.4.1-gnutls-2.8.patch
 %if %mdkversion > 200800
 BuildRequires:  wxgtku2.8-devel >= 2.8.9
 %else
@@ -65,10 +64,8 @@ of useful features and an intuitive interface
 %prep
 %setup -q -n %name-%tarballver
 %patch0 -p0
-%patch1 -p0
 
 %build
-autoreconf -fi
 %configure2_5x --disable-autoupdatecheck
 %make -j1
 
