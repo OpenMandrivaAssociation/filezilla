@@ -1,4 +1,4 @@
-%define version 3.3.0.1
+%define version 3.3.1
 %define betaver 0
 %define rel 1
 %if %betaver
@@ -14,10 +14,11 @@ Version:        %version
 Release:        %release
 Summary:        Fast and reliable FTP client
 Group:          Networking/File transfer
-License:        GPLv2+ 
-URL:            http://filezilla.sourceforge.net/
-Source0:        http://nchc.dl.sourceforge.net/sourceforge/%{name}/FileZilla_%{tarballver}_src.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-rooti
+License:        GPLv2+
+#old url http://filezilla.sourceforge.net/
+URL:            http://filezilla-project.org/
+Source0:        http://d10xg45o6p6dbl.cloudfront.net/projects/f/filezilla/FileZilla_%{tarballver}_src.tar.bz2
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Patch0:		filezilla-3.2.0-fix-str-fmt.patch
 %if %mdkversion > 200800
 BuildRequires:  wxgtku2.8-devel >= 2.8.9
@@ -62,7 +63,7 @@ of useful features and an intuitive interface
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %name-%tarballver
+%setup -q -n %{name}-%{tarballver}
 %patch0 -p0
 
 %build
@@ -70,7 +71,7 @@ of useful features and an intuitive interface
 %make -j1
 
 %install
-rm -rf %buildroot
+rm -rf %{buildroot}
 %makeinstall_std
 
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
@@ -87,4 +88,4 @@ desktop-file-install --vendor='' \
 %find_lang %name
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
