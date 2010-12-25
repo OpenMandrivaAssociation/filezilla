@@ -1,6 +1,6 @@
-%define version 3.3.3
+%define version 3.3.5.1
 %define betaver 0
-%define rel 2
+%define rel 1
 %if %betaver
 %define release %mkrel -c %betaver %rel
 %define tarballver %version-%betaver
@@ -17,7 +17,7 @@ Group:          Networking/File transfer
 License:        GPLv2+
 #old url http://filezilla.sourceforge.net/
 URL:            http://filezilla-project.org/
-Source0:        http://d10xg45o6p6dbl.cloudfront.net/projects/f/filezilla/FileZilla_%{tarballver}_src.tar.bz2
+Source0:        http://download.sourceforge.net/filezilla/FileZilla_%{tarballver}_src.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Patch0:		filezilla-3.2.0-fix-str-fmt.patch
 %if %mdkversion > 200800
@@ -64,11 +64,10 @@ of useful features and an intuitive interface
 
 %prep
 %setup -q -n %{name}-%{tarballver}
-%patch0 -p0
 
 %build
-%configure2_5x --disable-autoupdatecheck
-%make -j1
+%configure2_5x --disable-autoupdatecheck --with-tinyxml=builtin
+%make
 
 %install
 rm -rf %{buildroot}
