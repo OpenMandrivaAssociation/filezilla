@@ -31,6 +31,7 @@ BuildRequires:	dbus-devel
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
+BuildRequires:	sqlite3-devel
 
 %description
 FileZilla is a fast and reliable FTP client and server with lots 
