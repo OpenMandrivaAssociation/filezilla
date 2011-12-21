@@ -40,6 +40,7 @@ of useful features and an intuitive interface
 %{_bindir}/fzputtygen
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
+%dir %{_datadir}/%{name}/docs
 %{_datadir}/%{name}/docs/fzdefaults.xml.example
 %{_iconsdir}/hicolor/*/apps/filezilla.png
 %{_datadir}/applications/filezilla.desktop
