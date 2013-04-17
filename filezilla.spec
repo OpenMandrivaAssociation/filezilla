@@ -1,34 +1,44 @@
-%define version 3.6.0.2
-%define betaver 0
-%define rel 1
-%if %betaver
-%define release %mkrel -c %betaver %rel
-%define tarballver %version-%betaver
-%else
-%define release %mkrel %rel
-%define tarballver %version
-%endif
+Summary:	Fast and reliable FTP client
+Name:		filezilla
+Version:	3.6.0.2
+Release:	1
+Group:		Networking/File transfer
+License:	GPLv2+
+Url:		http://filezilla-project.org/
+Source0:	http://download.sourceforge.net/filezilla/FileZilla_%{version}_src.tar.bz2
 
-Name:           filezilla
-Version:        %{version}
-Release:        %{release}
-Summary:        Fast and reliable FTP client
-Group:          Networking/File transfer
-License:        GPLv2+
-URL:            http://filezilla-project.org/
-Source0:        http://download.sourceforge.net/filezilla/FileZilla_%{tarballver}_src.tar.bz2
-BuildRequires:  wxgtku2.8-devel >= 2.8.12
-BuildRequires:  idn-devel
-BuildRequires:  pkgconfig(gnutls)
-BuildRequires:	dbus-devel
-BuildRequires:	imagemagick
-BuildRequires:	desktop-file-utils xdg-utils
-BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:	desktop-file-utils
+BuildRequires:	xdg-utils
+BuildRequires:	wxgtku-devel >= 2.8.12
+BuildRequires:	pkgconfig(dbus-1)
+BuildRequires:	pkgconfig(gnutls)
+BuildRequires:	pkgconfig(libidn)
+BuildRequires:	pkgconfig(sqlite3)
 Requires:	xdg-utils
 
 %description
 FileZilla is a fast and reliable FTP client and server with lots 
 of useful features and an intuitive interface
+
+%prep
+%setup -q
+
+%build
+%configure2_5x \
+	--disable-autoupdatecheck \
+	--with-tinyxml=builtin
+%make LIBS="-lpthread"
+
+%install
+%makeinstall_std
+
+desktop-file-install --vendor='' \
+	--dir=%{buildroot}%{_datadir}/applications \
+	--add-category='GTK' \
+	--add-category='X-MandrivaLinux-CrossDesktop'\
+	%{buildroot}%{_datadir}/applications/*.desktop
+
+%find_lang %{name}
 
 %files -f %{name}.lang
 %{_bindir}/%{name}
@@ -42,22 +52,3 @@ of useful features and an intuitive interface
 %{_datadir}/pixmaps/%{name}.png
 %{_mandir}/man*/*
 
-#--------------------------------------------------------------------
-
-%prep
-%setup -q -n %{name}-%{tarballver}
-
-%build
-%configure2_5x --disable-autoupdatecheck --with-tinyxml=builtin
-%make LIBS="-lpthread"
-
-%install
-%makeinstall_std
-
-desktop-file-install --vendor='' \
-	--dir=%{buildroot}%{_datadir}/applications \
-	--add-category='GTK' \
-	--add-category='X-MandrivaLinux-CrossDesktop'\
-	%{buildroot}%{_datadir}/applications/*.desktop
-
-%find_lang %{name}
