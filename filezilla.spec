@@ -1,11 +1,11 @@
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.7.4
+Version:	3.7.4.1
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
 Url:		http://filezilla-project.org/
-Source0:	http://download.sourceforge.net/filezilla/FileZilla_3.7.4_src.tar.bz2
+Source0:	http://download.sourceforge.net/filezilla/FileZilla_3.7.4.1_src.tar.bz2
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
@@ -51,6 +51,7 @@ desktop-file-install --vendor='' \
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 %{_mandir}/man*/*
+
 
 
 
