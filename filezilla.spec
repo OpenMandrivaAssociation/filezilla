@@ -46,6 +46,7 @@ desktop-file-install --vendor='' \
 %{_bindir}/fzputtygen
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
+%dir %{_datadir}/%{name}/docs
 %{_datadir}/%{name}/docs/fzdefaults.xml.example
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_datadir}/applications/%{name}.desktop
