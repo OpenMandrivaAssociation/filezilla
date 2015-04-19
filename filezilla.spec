@@ -51,6 +51,7 @@ desktop-file-install --vendor='' \
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
+%{_datadir}/appdata/%{name}.appdata.xml
 %{_mandir}/man*/*
 
 
