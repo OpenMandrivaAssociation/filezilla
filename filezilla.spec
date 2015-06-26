@@ -1,7 +1,7 @@
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.7.0.2
-Release:	2
+Version:	3.11.0.2
+Release:	0.1
 Group:		Networking/File transfer
 License:	GPLv2+
 Url:		http://filezilla-project.org/
@@ -9,7 +9,7 @@ Source0:	http://download.sourceforge.net/filezilla/FileZilla_%{version}_src.tar.
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
-BuildRequires:	wxgtku-devel >= 2.8.12
+BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libidn)
@@ -24,7 +24,7 @@ of useful features and an intuitive interface
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-autoupdatecheck \
 	--with-tinyxml=builtin
 %make LIBS="-lpthread"
@@ -46,9 +46,14 @@ desktop-file-install --vendor='' \
 %{_bindir}/fzputtygen
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
+%dir %{_datadir}/%{name}/docs
 %{_datadir}/%{name}/docs/fzdefaults.xml.example
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
+%{_datadir}/appdata/%{name}.appdata.xml
 %{_mandir}/man*/*
+
+
+
 
