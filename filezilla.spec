@@ -1,7 +1,7 @@
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.11.0.2
-Release:	3
+Version:	3.14.0
+Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
 Url:		http://filezilla-project.org/
@@ -14,6 +14,7 @@ BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
+BuildRequires:  pugixml-devel >= 1.5
 Requires:	xdg-utils
 
 %description
