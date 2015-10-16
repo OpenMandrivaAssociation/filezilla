@@ -1,3 +1,7 @@
+# build segfaults
+%define _disable_lto 1
+%define _disable_rebuild_configure 1
+
 Summary:	Fast and reliable FTP client
 Name:		filezilla
 Version:	3.14.0
@@ -14,7 +18,7 @@ BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
-BuildRequires:  pugixml-devel >= 1.5
+BuildRequires:  pugixml-devel > 1.5
 Requires:	xdg-utils
 
 %description
