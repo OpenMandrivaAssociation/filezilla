@@ -29,6 +29,11 @@ of useful features and an intuitive interface
 %setup -q
 
 %build
+%ifarch %ix86
+export CC=gcc
+export CXX=g++
+%endif
+
 %configure \
 	--disable-autoupdatecheck \
 	--with-tinyxml=builtin
