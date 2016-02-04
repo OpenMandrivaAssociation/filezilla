@@ -19,6 +19,7 @@ BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:  pugixml-devel > 1.5
+BuildRequires:	pkgconfig(libfilezilla)
 Requires:	xdg-utils
 
 %description
