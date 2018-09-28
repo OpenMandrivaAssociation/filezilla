@@ -14,6 +14,7 @@ Source0:	http://download.filezilla-project.org/client/FileZilla_%{version}_src.t
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
 BuildRequires:	wxgtku3.0-devel
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libidn)
