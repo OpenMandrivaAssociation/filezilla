@@ -4,12 +4,12 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.37.1
-Release:	2
+Version:	3.40.0
+Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
 Url:		http://filezilla-project.org/
-Source0:	http://download.filezilla-project.org/client/FileZilla_%{version}_src.tar.bz2
+Source0:	http://download.filezilla-project.org/FileZilla_%{version}_src.tar.bz2
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
@@ -42,7 +42,7 @@ export CXX=g++
 %make LIBS="-lpthread"
 
 %install
-%makeinstall_std
+%make_install
 
 desktop-file-install --vendor='' \
 	--dir=%{buildroot}%{_datadir}/applications \
