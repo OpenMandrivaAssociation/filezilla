@@ -4,7 +4,7 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.41.1
+Version:	3.41.2
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
@@ -65,7 +65,3 @@ desktop-file-install --vendor='' \
 %{_datadir}/pixmaps/%{name}.png
 %{_datadir}/appdata/%{name}.appdata.xml
 %{_mandir}/man*/*
-
-
-
-
