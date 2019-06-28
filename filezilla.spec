@@ -31,10 +31,13 @@ of useful features and an intuitive interface
 %setup -q
 
 %build
-%ifarch %ix86
+# same as in libfilezilla, package now need c++17 and clang not support it.
+# need force clang to c++17 but for some reason this workaround not working
+# so for now, switch to gcc
+#ifarch %ix86
 export CC=gcc
 export CXX=g++
-%endif
+#endif
 
 %configure \
 	--disable-autoupdatecheck \
