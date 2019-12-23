@@ -4,12 +4,12 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.43.0
+Version:	3.46.2
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
 Url:		http://filezilla-project.org/
-Source0:	http://download.filezilla-project.org/FileZilla_%{version}_src.tar.bz2
+Source0:	http://download.filezilla-project.org/client/FileZilla_%{version}_src.tar.bz2
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
@@ -17,6 +17,7 @@ BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
+BuildRequires:  pkgconfig(nettle)
 BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:  pugixml-devel > 1.5
@@ -35,9 +36,14 @@ of useful features and an intuitive interface
 # need force clang to c++17 but for some reason this workaround not working
 # so for now, switch to gcc
 #ifarch %ix86
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 #endif
+
+# Dirty solution. Until new tarball comes
+# https://trac.filezilla-project.org/ticket/12067
+cp src/putty/putty/*.h src/putty
+cp src/putty/putty/unix/*.h src/putty/unix
 
 %configure \
 	--disable-autoupdatecheck \
