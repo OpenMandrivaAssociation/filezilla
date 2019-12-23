@@ -22,7 +22,6 @@ BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:  pugixml-devel > 1.5
 BuildRequires:	pkgconfig(libfilezilla)
-BuildRequires:  kernel-release-devel
 Requires:	xdg-utils
 
 %description
