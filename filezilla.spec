@@ -37,8 +37,8 @@ of useful features and an intuitive interface
 # need force clang to c++17 but for some reason this workaround not working
 # so for now, switch to gcc
 #ifarch %ix86
-#export CC=gcc
-#export CXX=g++
+export CC=gcc
+export CXX=g++
 #endif
 
 %configure \
