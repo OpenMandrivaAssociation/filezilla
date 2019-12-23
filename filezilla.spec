@@ -17,10 +17,12 @@ BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
+BuildRequires:  pkgconfig(nettle)
 BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:  pugixml-devel > 1.5
 BuildRequires:	pkgconfig(libfilezilla)
+BuildRequires:  kernel-release-devel
 Requires:	xdg-utils
 
 %description
