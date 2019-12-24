@@ -1,10 +1,10 @@
 # build segfaults
-%define _disable_lto 1
+#define _disable_lto 1
 %define _disable_rebuild_configure 1
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.46.2
+Version:	3.46.3
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
@@ -39,11 +39,6 @@ of useful features and an intuitive interface
 #export CC=gcc
 #export CXX=g++
 #endif
-
-# Dirty solution. Until new tarball comes
-# https://trac.filezilla-project.org/ticket/12067
-cp src/putty/putty/*.h src/putty
-cp src/putty/putty/unix/*.h src/putty/unix
 
 %configure \
 	--disable-autoupdatecheck \
