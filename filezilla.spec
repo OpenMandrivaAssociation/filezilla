@@ -1,10 +1,11 @@
 # build segfaults
-#define _disable_lto 1
+%define _disable_lto 1
+%define _disable_ld_no_undefined 1
 %define _disable_rebuild_configure 1
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.50.0
+Version:	3.52.0
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
@@ -60,6 +61,8 @@ desktop-file-install --vendor='' \
 %{_bindir}/%{name}
 %{_bindir}/fzsftp
 %{_bindir}/fzputtygen
+%{_libdir}/libfzclient-private-%{version}.so
+%{_libdir}/libfzclient-private.so
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
 %dir %{_datadir}/%{name}/docs
