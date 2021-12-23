@@ -5,7 +5,7 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.52.2
+Version:	3.57.0
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
@@ -33,14 +33,6 @@ of useful features and an intuitive interface
 %setup -q
 
 %build
-# same as in libfilezilla, package now need c++17 and clang not support it.
-# need force clang to c++17 but for some reason this workaround not working
-# so for now, switch to gcc
-#ifarch %ix86
-#export CC=gcc
-#export CXX=g++
-#endif
-
 %configure \
 	--disable-autoupdatecheck \
 	--with-tinyxml=builtin
@@ -63,6 +55,8 @@ desktop-file-install --vendor='' \
 %{_bindir}/fzputtygen
 %{_libdir}/libfzclient-private-%{version}.so
 %{_libdir}/libfzclient-private.so
+%{_libdir}/libfzclient-commonui-private-%{version}.so
+%{_libdir}/libfzclient-commonui-private.so
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
 %dir %{_datadir}/%{name}/docs
