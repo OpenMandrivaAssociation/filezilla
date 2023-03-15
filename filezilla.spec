@@ -5,7 +5,7 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.62.1
+Version:	3.63.2.1
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
@@ -53,9 +53,9 @@ desktop-file-install --vendor='' \
 %{_bindir}/%{name}
 %{_bindir}/fzsftp
 %{_bindir}/fzputtygen
-%{_libdir}/libfzclient-private-%{version}.so
+%{_libdir}/libfzclient-private-3.63.2.so
 %{_libdir}/libfzclient-private.so
-%{_libdir}/libfzclient-commonui-private-%{version}.so
+%{_libdir}/libfzclient-commonui-private-3.63.2.so
 %{_libdir}/libfzclient-commonui-private.so
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
