@@ -5,12 +5,12 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.63.2.1
-Release:	2
+Version:	3.66.0
+Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
 Url:		http://filezilla-project.org/
-Source0:	http://download.filezilla-project.org/client/FileZilla_%{version}_src.tar.bz2
+Source0:	http://download.filezilla-project.org/client/FileZilla_%{version}_src.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
@@ -21,7 +21,7 @@ BuildRequires:	pkgconfig(gnutls)
 BuildRequires:  pkgconfig(nettle)
 BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
-BuildRequires:  pugixml-devel > 1.5
+BuildRequires:  pugixml-devel
 BuildRequires:	pkgconfig(libfilezilla)
 Requires:	xdg-utils
 
