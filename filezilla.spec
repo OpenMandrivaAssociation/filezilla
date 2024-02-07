@@ -17,7 +17,7 @@ BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
 BuildRequires:	xdg-utils
 BuildRequires:	boost-regex-devel
-BuildRequires:	wxgtku3.0-devel
+BuildRequires:	wxgtk-devel
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnutls)
