@@ -5,7 +5,7 @@
 
 Summary:	Fast and reliable FTP client
 Name:		filezilla
-Version:	3.69.3
+Version:	3.69.5
 Release:	1
 Group:		Networking/File transfer
 License:	GPLv2+
