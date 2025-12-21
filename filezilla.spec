@@ -12,6 +12,11 @@ License:	GPLv2+
 Url:		https://filezilla-project.org/
 Source0:	https://download.filezilla-project.org/client/FileZilla_%{version}_src.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	which
 BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
