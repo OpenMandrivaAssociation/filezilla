@@ -62,6 +62,8 @@ desktop-file-install --vendor='' \
 %{_bindir}/%{name}
 %{_libdir}/libfzclient-private.so
 %{_libdir}/libfzclient-commonui-private.so
+%{_libdir}/libfzclient-commonui-private-3.70.0.so
+%{_libdir}/libfzclient-private-3.70.0.so
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
 %dir %{_datadir}/%{name}/docs
