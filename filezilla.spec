@@ -60,11 +60,7 @@ desktop-file-install --vendor='' \
 
 %files -f %{name}.lang
 %{_bindir}/%{name}
-%{_bindir}/fzsftp
-%{_bindir}/fzputtygen
-%{_libdir}/libfzclient-private-%{version}.so
 %{_libdir}/libfzclient-private.so
-%{_libdir}/libfzclient-commonui-private-%{version}.so
 %{_libdir}/libfzclient-commonui-private.so
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/resources
