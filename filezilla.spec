@@ -31,7 +31,7 @@ BuildRequires:	pkgconfig(libidn)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:  pugixml-devel
 BuildRequires:	pkgconfig(libfilezilla)
-BuildRequires:  fzssh-devel
+BuildRequires:  pkgconfig(libfzssh-client)
 Requires:	xdg-utils
 
 %description
