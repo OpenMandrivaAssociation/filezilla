@@ -39,7 +39,7 @@ FileZilla is a fast and reliable FTP client and server with lots
 of useful features and an intuitive interface
 
 %prep
-%autosetup -n %{name}-3.70.0 -p1
+%autosetup -n %{name}-%{version} -p1
 
 %build
 %configure \
